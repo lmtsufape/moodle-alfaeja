@@ -1,0 +1,52 @@
+# Arquivo de configuração local
+config.php
+
+# Diretórios de dados (definido por $CFG->dataroot) - geralmente fora da raiz web
+moodledata/
+data/
+dataroot/
+localdata/
+
+# Cache, sessões e arquivos temporários
+cache/
+localcache/
+sessions/
+temp/
+trashdir/
+
+# Diretórios que podem ser gerados por ferramentas de backup
+backup/
+restorelog/
+moodle_backup.xml
+*.mbz
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+
+# Arquivos de pacotes extras
+*.zip
+*.tar.gz
+*.tar
+
+# Diretórios de IDEs
+.idea/
+.vscode/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Node/npm (se usar no tema, por exemplo)
+node_modules/
+npm-debug.log
+
+# Composer
+/vendor/
+composer.lock
+
+# PHPUnit
+phpunit.xml
+phpunit.xml.dist
+phpunit/
+
