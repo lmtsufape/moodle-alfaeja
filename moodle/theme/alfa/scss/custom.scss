@@ -1,0 +1,58 @@
+@import 'login';
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#frontpage-1 h1,
+#frontpage-1 p,
+#frontpage-1 span {
+    color: white;
+}
+
+#frontpage-2 h1{
+    color: #8A04A1;
+}
+
+ul.list-frontpage {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.list-frontpage li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+ul.list-frontpage li::before {
+    content: '';
+    display: inline-block;
+    width: 1.45rem;
+    height: 1.45rem;
+    flex-shrink: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+ul.list-frontpage li:nth-child(2)::before {
+    background-image: url('[[pix:theme|icon_relogio]]');
+}
+
+ul.list-frontpage li:nth-child(3)::before {
+    background-image: url('[[pix:theme|icon_computador]]');
+}
+
+ul.list-frontpage li:nth-child(4)::before {
+    background-image: url('[[pix:theme|icon_aula]]');
+}
+
+ul.list-frontpage li:nth-child(5)::before {
+    background-image: url('[[pix:theme|icon_pessoa]]');
+}
+
+ul.list-frontpage li:nth-child(6)::before {
+    background-image: url('[[pix:theme|icon_certificado]]');
+}
