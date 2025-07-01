@@ -56,3 +56,54 @@ ul.list-frontpage li:nth-child(5)::before {
 ul.list-frontpage li:nth-child(6)::before {
     background-image: url('[[pix:theme|icon_certificado]]');
 }
+// Cartão geral
+.curso-card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #fff;
+  
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+  
+    .card-body {
+      padding: 1rem;
+    }
+  }
+  
+  // Imagem do topo
+  .curso-img {
+    height: 160px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+  }
+  
+  // Informações adicionais (duração, certificado)
+  .curso-info .info-item {
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  // Avatar e nome do autor
+  .autor-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+  .curso-autor {
+    border-top: 1px solid #eaeaea;
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+  
+
+
+
+  

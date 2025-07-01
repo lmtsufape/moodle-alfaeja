@@ -60,22 +60,16 @@
     
     <div id="page" data-region="mainpage" data-usertour="scroller" class="flex-grow-1"  style="background-color: #F5F5F5">
 
-        <div class="d-none">{{{ output.main_content }}}</div>
+       {{{ output.main_content }}}
 
-        {{#loggedin}}
-        <h1>logado</h1> 
-        {{/loggedin}}
-
-        {{^loggedin}}
-            {{{ output.frontpage_content }}}
-        {{/loggedin}}
+  
         {{{ output.activity_navigation }}}
         {{{ output.course_content_footer }}}
         
       
         
     </div>
-    {{> theme_boost/footer }}
+    {{> theme_alfa/core/footer }}
     
     {{{ output.standard_after_main_region_html }}}
 

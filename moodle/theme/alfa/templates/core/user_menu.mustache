@@ -53,7 +53,17 @@
     }
 }}
 <div class="usermenu">
-
+    {{#unauthenticateduser}}
+        <span class="login ps-2">
+            {{#guest}}
+                {{#str}} loggedinasguest, core {{/str}}
+                <div class="divider border-start h-75 align-self-center mx-2"></div>
+            {{/guest}}
+            {{#url}}
+                <a class="btn btn-lg btn-primary" href="{{url}}">{{#str}} login, core {{/str}}</a>
+            {{/url}}
+        </span>
+    {{/unauthenticateduser}}
     {{^unauthenticateduser}}
         <div class="dropdown show">
             <a href="#" role="button" id="user-menu-toggle" data-toggle="dropdown" aria-label="{{#str}}usermenu{{/str}}"

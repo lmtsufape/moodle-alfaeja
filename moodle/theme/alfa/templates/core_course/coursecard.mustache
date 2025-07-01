@@ -1,0 +1,66 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template core_course/coursecard
+
+    This template renders the a card for the course cards.
+
+    Example context (json):
+    {
+        "courses": [
+            {
+                "name": "Assignment due 1",
+                "viewurl": "https://moodlesite/course/view.php?id=2",
+                "courseimage": "https://moodlesite/pluginfile/123/course/overviewfiles/123.jpg",
+                "fullname": "course 3",
+                "hasprogress": true,
+                "progress": 10,
+                "visible": true
+            }
+        ]
+    }
+}}
+<div class="curso-card card shadow-sm mb-4" role="listitem" data-course-id="{{id}}">
+    <a href="{{viewurl}}" tabindex="-1">
+        <img src="{{{courseimage}}}" alt="{{fullname}}" class="curso-img w-100">
+    </a>
+    <div class="card-body">
+        <div class="text-muted small mb-1">{{categoryname}}</div>
+
+        <a href="{{viewurl}}" class="text-decoration-none text-dark">
+            <h5 class="fw-semibold mb-2">{{fullname}}</h5>
+        </a>
+
+        <p class="text-muted small mb-2">{{{summary}}}</p>
+
+        <div class="curso-info d-flex gap-3 text-primary mb-2">
+            <div class="info-item d-flex align-items-center">
+                <i class="fa-regular fa-clock me-1"></i>
+                <span>{{duracao}}</span>
+            </div>
+            <div class="info-item d-flex align-items-center">
+                <i class="fa-solid fa-certificate me-1"></i>
+                <span>{{certificado}}</span>
+            </div>
+        </div>
+
+        <div class="curso-autor d-flex align-items-center gap-2 mt-3">
+            <img src="{{foto_autor}}" alt="{{autor}}" class="autor-avatar">
+            <span class="autor-nome small">{{autor}}</span>
+        </div>
+    </div>
+</div>

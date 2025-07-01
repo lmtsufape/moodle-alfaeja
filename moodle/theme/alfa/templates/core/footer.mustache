@@ -1,10 +1,11 @@
+{{> theme_boost/footer }}
 <footer class="footer text-light pb-3" style="background-color: #421944">
-    <img src="{{logo.linhas}}" alt="" width="100%" class="mt-n5">
+    <img src="{{config.wwwroot}}/theme/alfa/pix/linhas.svg" alt="" width="100%" class="mt-n5">
     <div class="d-flex justify-content-around align-items-center">
     
         <div class="text-center mx-5">
-            <img src="{{logo.site}}" alt="Logo do sistema"  width="200px" height="100px">
-            <p>{{ footertext }}</p>
+            <img src="{{config.wwwroot}}/theme/alfa/pix/logo_rodape_alfa_eja_brasil.svg" alt="Logo do sistema"  width="200px" height="100px">
+            <p>{{ get_config('theme_alfa', 'footertext') }}</p>
         </div>   
 
 
@@ -35,11 +36,11 @@
     <div class="d-flex justify-content-center">
         <div class="mx-5">
             <h4>Realização</h4>
-            <img src="{{logo.ipf}}" alt="Logo do IPF">
+            <img src="{{config.wwwroot}}/theme/alfa/pix/logo_rodape_ipf.svg" alt="Logo do IPF">
         </div>
         <div class="mx-5">
             <h4>Parceria</h4>
-            <img src="{{logo.petrobras}}" alt="Logo da petrobrás">
+            <img src="{{config.wwwroot}}/theme/alfa/pix/logo_rodape_petrobras.svg" alt="Logo da petrobrás">
         </div>
     </div>
 

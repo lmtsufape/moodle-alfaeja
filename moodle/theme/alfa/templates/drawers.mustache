@@ -51,13 +51,13 @@
 }}
 {{> theme_alfa/head }}
 
-<body {{{ bodyattributes }}}>
+<body {{{ bodyattributes }}} class="d-flex flex-column w-100">
 {{> core/local/toast/wrapper}}
-<div id="page-wrapper" class="d-print-block">
+{{> theme_alfa/core/navbar }}
+<div id="page-wrapper" class="d-print-block flex-grow-1">
 
     {{{ output.standard_top_of_body_html }}}
 
-    {{> theme_alfa/core/navbar }}
     {{#courseindex}}
         {{< theme_boost/drawer }}
             {{$id}}theme_boost-drawers-courseindex{{/id}}
@@ -166,9 +166,9 @@
                 </div>
             </div>
         </div>
-        {{> theme_boost/footer }}
     </div>
     {{{ output.standard_after_main_region_html }}}
+        {{> theme_alfa/core/footer }}
 </div>
 
 </body>
