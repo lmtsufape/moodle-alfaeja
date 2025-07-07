@@ -1,0 +1,82 @@
+{{!
+    Template para card de curso customizado do tema Alfa
+    
+    Context variables:
+    * course - objeto do curso
+    * courseid - ID do curso
+    * fullname - nome completo do curso
+    * shortname - nome curto do curso
+    * summary - resumo do curso
+    * courseurl - URL do curso
+    * courseimage - URL da imagem do curso
+    * instructors - array de instrutores
+    * courseinfo - informações adicionais
+    * enrolledcount - número de alunos matriculados
+    * additionalclasses - classes CSS adicionais
+    * categoryname - nome da categoria do curso
+}}
+
+<div class="curso-card card {{additionalclasses}}" data-course-id="{{courseid}}" onclick="window.location='{{courseurl}}'" style="cursor:pointer;">
+    {{#courseimage}}
+    <div class="card-img-top-container">
+        <img src="{{courseimage}}" class="curso-img card-img-top" alt="{{fullname}}">
+    </div>
+    {{/courseimage}}
+    
+
+
+    <div class="card-body" style="margin-top: 0.2em;">
+        {{#categoryname}}
+            <div class="curso-categoria text-muted" style="font-size: 0.92em; margin-bottom: 0.1em; line-height: 1.1;">
+                {{categoryname}}
+            </div>
+        {{/categoryname}}
+        <h5 class="card-title curso-titulo" style="margin-top: 0.2em;">
+            {{fullname}}
+        </h5>
+        
+        {{#summary}}
+            <div class="card-text curso-resumo" style="margin-bottom:0;">{{{summary}}}</div>
+        {{/summary}}
+        
+        <!-- Informações do curso -->
+        <div class="curso-info mb-3">
+            {{#courseinfo.duration}}
+            <div class="info-item mb-2 d-flex justify-content-between mt-4">
+                
+                <span class="duracao-label bold">
+                <svg width="18" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6168 0.945411C10.6879 1.25927 10.6314 1.5885 10.4598 1.86072C10.2882 2.13295 10.0155 2.32587 9.70164 2.3971C9.46346 2.45129 9.22742 2.51445 8.994 2.58645C8.8417 2.63347 8.68163 2.65003 8.52292 2.63519C8.36422 2.62035 8.20999 2.57439 8.06905 2.49995C7.9281 2.4255 7.8032 2.32403 7.70148 2.20131C7.59975 2.07859 7.52319 1.93704 7.47617 1.78474C7.42915 1.63244 7.41258 1.47237 7.42743 1.31366C7.44227 1.15496 7.48822 1.00073 7.56267 0.859786C7.63711 0.718842 7.73859 0.593941 7.8613 0.492215C7.98402 0.390488 8.12557 0.313928 8.27787 0.266907C8.56918 0.176277 8.86453 0.0973813 9.16393 0.0302187C9.31943 -0.00514239 9.48036 -0.00951692 9.63755 0.0173447C9.79474 0.0442062 9.94509 0.101777 10.08 0.186769C10.2149 0.27176 10.3318 0.382506 10.4239 0.512677C10.516 0.642848 10.5816 0.789894 10.6168 0.945411ZM13.1051 0.945411C13.1763 0.631588 13.3692 0.358892 13.6415 0.187275C13.9137 0.0156569 14.2429 -0.040835 14.5568 0.0302187C19.963 1.25614 24 6.08942 24 11.867C24 18.5708 18.5647 24.0049 11.8622 24.0049C6.08335 24.0049 1.25007 19.969 0.0241485 14.5628C-0.0387758 14.2521 0.0223905 13.9291 0.194566 13.6628C0.366741 13.3966 0.636256 13.2083 0.94547 13.1382C1.25468 13.0681 1.57905 13.1218 1.84919 13.2878C2.11933 13.4537 2.31381 13.7188 2.39103 14.0263C2.77727 15.7181 3.60979 17.2754 4.80196 18.5362C5.99414 19.7971 7.50241 20.7155 9.16986 21.1958C10.8373 21.6761 12.603 21.7009 14.2832 21.2674C15.9635 20.834 17.4969 19.9582 18.7239 18.7312C19.9509 17.5042 20.8267 15.9708 21.2601 14.2905C21.6936 12.6103 21.6689 10.8446 21.1885 9.17714C20.7082 7.50969 19.7898 6.00142 18.529 4.80925C17.2681 3.61707 15.7108 2.78455 14.0191 2.39831C13.7052 2.32683 13.4326 2.13361 13.2612 1.86114C13.0898 1.58867 13.0336 1.25928 13.1051 0.945411ZM5.32352 3.03069C5.43208 3.14757 5.51652 3.28469 5.57204 3.43423C5.62756 3.58376 5.65307 3.74277 5.64709 3.90217C5.64112 4.06157 5.60378 4.21822 5.53723 4.36318C5.47067 4.50814 5.37619 4.63856 5.25919 4.74698C5.07955 4.91286 4.90679 5.08522 4.74091 5.26405C4.52041 5.49348 4.21864 5.62715 3.90056 5.63627C3.58249 5.64539 3.27355 5.52924 3.04026 5.31283C2.80698 5.09641 2.66801 4.79704 2.65328 4.47917C2.63855 4.16131 2.74924 3.85037 2.9615 3.61331C3.16785 3.38997 3.38309 3.17432 3.60724 2.96636C3.72411 2.85781 3.86124 2.77336 4.01077 2.71784C4.16031 2.66232 4.31932 2.63682 4.47871 2.64279C4.63811 2.64877 4.79477 2.6861 4.93973 2.75266C5.08468 2.81922 5.2151 2.91369 5.32352 3.03069ZM11.861 4.58433C12.1829 4.58433 12.4916 4.71221 12.7192 4.93984C12.9469 5.16747 13.0747 5.4762 13.0747 5.79811V11.3645L16.3605 14.6502C16.5816 14.8792 16.7039 15.1858 16.7011 15.504C16.6984 15.8223 16.5707 16.1267 16.3457 16.3517C16.1206 16.5768 15.8162 16.7044 15.4979 16.7072C15.1797 16.71 14.8731 16.5876 14.6442 16.3665L11.0028 12.7252C10.7752 12.4976 10.6472 12.1889 10.6472 11.867V5.79811C10.6472 5.4762 10.7751 5.16747 11.0027 4.93984C11.2303 4.71221 11.539 4.58433 11.861 4.58433ZM1.77807 7.48284C2.08563 7.57769 2.34293 7.79081 2.49338 8.07533C2.64384 8.35985 2.67513 8.69248 2.58038 9.00007C2.50838 9.23349 2.44522 9.46953 2.39103 9.70771C2.31381 10.0152 2.11933 10.2803 1.84919 10.4463C1.57905 10.6123 1.25468 10.666 0.94547 10.5959C0.636256 10.5258 0.366741 10.3375 0.194566 10.0712C0.0223905 9.80501 -0.0387758 9.48197 0.0241485 9.17122C0.0921204 8.87182 0.171016 8.57646 0.260836 8.28516C0.355681 7.97759 0.568798 7.72029 0.853321 7.56984C1.13784 7.41938 1.47047 7.38809 1.77807 7.48284Z" fill="#6861F2"/>
+                </svg>
+                Duração:</span>
+                <span class="bold">{{courseinfo.duration}}</span>
+            </div>
+            {{/courseinfo.duration}}
+            
+            {{#courseinfo.certificate}}
+            <div class="info-item mb-2">
+                <i class="fa fa-certificate me-2"style="color: #6861F2;"></i>
+                <span>Certificado incluído</span>
+            </div>
+            {{/courseinfo.certificate}}
+        </div>
+        <hr class="mb-5 mt-3">
+
+        <!-- Informações do instrutor -->
+        {{! Não funciona }}
+        {{#instructors}}
+        <div class="card-footer curso-autor">
+            <div class="d-flex align-items-center">
+            <img src="{{avatar}}" class="autor-avatar me-2" alt="{{fullname}}">
+            <div>
+                <small class="text-muted">Instrutor</small>
+                <div class="fw-bold">
+                <a href="{{profileurl}}" class="text-decoration-none">{{fullname}}</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        {{/instructors}}
+    </div>
+    
+</div>
