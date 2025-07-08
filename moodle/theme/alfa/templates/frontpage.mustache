@@ -58,15 +58,207 @@
 
     {{> theme_alfa/core/navbar }}
     
+    <!-- Estilos CSS específicos da frontpage -->
+    <style>
+        /* Estilo personalizado para o título "Available courses" */
+        #frontpage-available-course-list h2,
+        #frontpage-available-course-list .page-header-headings h2,
+        .frontpage-available-course-list h2,
+        .frontpage-available-course-list .page-header-headings h2,
+        div[id*="frontpage-available-course-list"] h2,
+        div[id*="frontpage-available-course-list"] h1,
+        body #page #frontpage-available-course-list h2 {
+            color: #8A04A1 !important;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            margin-left: 3rem;
+        }
+
+        /* Estilos para cards de curso customizados */
+        .curso-card {
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
+            border: 2px solid #e9ecef;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .curso-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .curso-card .card-img-top-container {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .curso-card .card-img-top-container .curso-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .curso-card .card-img-top-container:hover .curso-img {
+            transform: scale(1.05);
+        }
+        
+        .curso-card .card-body {
+            padding: 1.5rem;
+        }
+        
+        .curso-card .curso-titulo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        
+        .curso-card .curso-titulo a {
+            color: #212529;
+            text-decoration: none;
+        }
+        
+        .curso-card .curso-titulo a:hover {
+            color: #8A04A1;
+        }
+        
+        .curso-card .curso-resumo {
+            font-size: 0.95rem;
+            color: #6c757d;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .curso-card .curso-info .info-item {
+            font-size: 0.875rem;
+            color: #495057;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .curso-card .curso-info .info-item i {
+            color: #8A04A1;
+            width: 16px;
+            text-align: center;
+        }
+        
+        .curso-card .curso-actions .btn {
+            border-radius: 8px;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            background-color: #8A04A1;
+            border-color: #8A04A1;
+            transition: all 0.3s ease;
+        }
+        
+        .curso-card .curso-actions .btn:hover {
+            background-color: #7A0391;
+            border-color: #7A0391;
+            transform: translateY(-2px);
+        }
+        
+        .curso-card .curso-autor {
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            padding: 1rem 1.5rem;
+        }
+        
+        .curso-card .curso-autor .autor-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .curso-card .curso-autor a {
+            color: #8A04A1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .curso-card .curso-autor a:hover {
+            color: #7A0391;
+        }
+        
+        .curso-card .curso-autor .text-muted {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Layout em grid para os cards */
+        .frontpage-course-list-all {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            justify-items: center;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .frontpage-course-list-all {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .curso-card {
+                margin-bottom: 1rem;
+            }
+            
+            .curso-card .card-img-top-container {
+                height: 160px;
+            }
+            
+            .curso-card .card-body {
+                padding: 1rem;
+            }
+            
+            .curso-card .curso-autor {
+                padding: 0.75rem 1rem;
+            }
+        }
+        
+    </style>
+    
+    <!-- CSS temporário até o SCSS funcionar -->
+    <style>
+    #frontpage-available-course-list h2,
+    #frontpage-available-course-list h1,
+    body #page div[id*="frontpage-available-course-list"] h2 {
+        color: #8A04A1 !important;
+        font-weight: bold;
+    }
+    
+    </style>
+
+    
     <div id="page" data-region="mainpage" data-usertour="scroller" class="flex-grow-1"  style="background-color: #F5F5F5">
 
-       {{{ output.main_content }}}
+       <div class="container-fluid">
+           <div class="row">
+               <div class="col-12">
+               {{{searchbox}}}
+                   {{{ output.main_content }}}
+               </div>
+           </div>
+       </div>
 
-  
-        {{{ output.activity_navigation }}}
-        {{{ output.course_content_footer }}}
-        
-      
+       {{{ output.activity_navigation }}}
+       {{{ output.course_content_footer }}}
         
     </div>
     {{> theme_alfa/core/footer }}
