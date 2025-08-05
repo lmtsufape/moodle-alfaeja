@@ -56,6 +56,25 @@
     }
 }}
 
+<style>
+    .usermenu .login .btn-primary {
+    background-color: #6861F2 !important;
+    border-color: #6861F2 !important;
+    
+    &:hover {
+        background-color: #5a54d9 !important;
+        border-color: #5a54d9 !important;
+    }
+    
+    &:focus {
+        background-color: #5a54d9 !important;
+        border-color: #5a54d9 !important;
+        box-shadow: 0 0 0 0.2rem rgba(104, 97, 242, 0.25) !important;
+    }
+}
+
+</style>
+
 
 <nav class="navbar fixed-top navbar-light bg-white navbar-expand" aria-label="{{#str}}sitemenubar, admin{{/str}}">
     <div class="container-fluid">
@@ -66,7 +85,7 @@
 
         <a href="{{{ config.homeurl }}}" class="navbar-brand d-none d-md-flex align-items-center m-0 me-4 p-0 aabtn">
 
-            <img src="{{config.wwwroot}}/theme/alfa/pix/icones/icon_menu.svg" class="logo me-1" alt="logo">
+            <img src="{{config.wwwroot}}/theme/alfa/pix/image_navbar.png" class="logo me-1" style="width:160px" alt="logo">
         </a>
         {{#primarymoremenu}}
             <div class="primary-navigation">

@@ -1,0 +1,102 @@
+/* Layout de Grid para Cards de Curso - 3 por fileira */
+
+/* Container principal dos cursos */
+.frontpage-course-list-all,
+.course-list,
+.courses-list,
+[data-region="course-list"],
+.course-cards-container,
+.course-list-container,
+.courses-container {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 2rem !important;
+}
+
+/* Cards individuais */
+.curso-card {
+    height: 100% !important;
+    margin-bottom: 0 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.curso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagens dos cards */
+.curso-img,
+.card-img-top {
+    height: 200px !important;
+    object-fit: cover !important;
+    width: 100% !important;
+}
+
+.card-img-top-container {
+    height: 200px !important;
+    overflow: hidden;
+}
+
+.card-img-top-container img {
+    height: 100% !important;
+    object-fit: cover !important;
+    width: 100% !important;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 991px) {
+    .frontpage-course-list-all,
+    .course-list,
+    .courses-list,
+    [data-region="course-list"],
+    .course-cards-container,
+    .course-list-container,
+    .courses-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 575px) {
+    .frontpage-course-list-all,
+    .course-list,
+    .courses-list,
+    [data-region="course-list"],
+    .course-cards-container,
+    .course-list-container,
+    .courses-container {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .curso-img,
+    .card-img-top,
+    .card-img-top-container {
+        height: 160px !important;
+    }
+}
+
+/* Override para Bootstrap grid se necessário */
+.row .col-md-4,
+.row .col-lg-4 {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+}
+
+/* Garantir que os cards tenham altura igual */
+.curso-card .card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.curso-card .card-body .curso-actions {
+    margin-top: auto;
+} 
