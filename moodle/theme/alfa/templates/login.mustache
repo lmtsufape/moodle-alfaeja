@@ -43,15 +43,27 @@
         <div id="page-content" class="row">
             <div id="region-main-box" class="col-12">
                 <div id="region-main" class="col-12 h-100">
-                <div class="login-wrapper">
-                    <div class="container shadow card">
-                        <div class="row">
-                            <div id="login-img" class="col-md-6 d-flex flex-column justify-content-between py-5">
-                                <img src="{{config.wwwroot}}/theme/alfa/pix/logo_rodape_alfa_eja_brasil.svg" width="50%" class="logo me-1" alt="logo">
-                                <h2 class="text-white w-50">Educar é um ato de esperaça</h2>
+                <div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+                    <div class="card shadow-lg border-0 rounded-4 overflow-hidden h-100" style="max-width:900px; width:100%; min-height:623px; height: 100%;">
+                        <div class="row g-0 h-100" style="height: 100%;">
+                            <!-- Lado esquerdo: imagem, logo e frase -->
+                            <div class="col-md-6 position-relative h-100" style="background: url('{{config.wwwroot}}/theme/alfa/pix/login_side.png') center center/cover no-repeat; min-height: 623px; height: 100%;">
+                                <div class="p-4 h-100 d-flex flex-column" style="min-height: 400px; height: 100%; position: relative;">
+                                    <div class="mb-4">
+                                        <img src="{{config.wwwroot}}/theme/alfa/pix/logo_rodape_alfa_eja_brasil.svg" width="160" alt="logo">
+                                    </div>
+                                    {{! <div style="position: absolute; left: 0; bottom: 0; padding: 32px;">
+                                        <h4 class="text-white mb-0" style="text-shadow: 0 2px 8px rgba(0,0,0,0.3);">Educar é um ato<br>de esperança.</h4>
+                                    </div> }}
+                                </div>
                             </div>
-                            <div class="col-md-6 p-5">
-                                {{{ output.main_content }}}
+                            <!-- Lado direito: formulário -->
+                            <div class="col-md-6 bg-white d-flex align-items-center">
+                                <div class="w-100 p-5">
+                                    <h2 class="text-center fw-bold" style="color:#421944;">Acesso</h2>
+                                    <p class="text-center text-muted mb-4">Para acessar a plataforma, insira seu<br> e-mail e senha.</p>
+                                    {{{ output.main_content }}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -60,7 +72,7 @@
             </div>
         </div>
     </div>
-    {{> theme_boost/footer }}
+    {{> theme_alfa/core/footer }}
 </div>
 
 </body>

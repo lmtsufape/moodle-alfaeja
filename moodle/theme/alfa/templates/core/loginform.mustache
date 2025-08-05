@@ -101,7 +101,19 @@
 
 <div class="loginform">
    
-    <h1 class="login-heading mb-4">{{#str}} loginto, theme_alfa {{/str}}</h1>
+
+<style>
+.login-form-username input,
+.login-form-password input,
+.login-form input[type="text"],
+.loginbtn,
+.login-form input[type="password"] {
+    width: 100% !important;
+    min-width: 0;
+    box-sizing: border-box;
+    display: block;
+}
+</style>
     
     {{#maintenance}}
         <div class="alert alert-danger login-maintenance">
@@ -133,19 +145,11 @@
                         {{#str}} usernameemail {{/str}}
                     {{/canloginbyemail}}
                 </label>
-                <input type="text" name="username" id="username" {{!
-                    !}}class="form-control form-control-lg" {{!
-                    !}}value="{{username}}" {{!
-                    !}}placeholder="{{^canloginbyemail}}{{#cleanstr}}username{{/cleanstr}}{{/canloginbyemail}}{{!
-                    !}}{{#canloginbyemail}}{{#cleanstr}}usernameemail{{/cleanstr}}{{/canloginbyemail}}" {{!
-                    !}}autocomplete="username">
+                <input type="text" name="username" id="username" class="form-control form-control-lg" value="{{username}}" placeholder="Digite seu e-mail" autocomplete="username">
             </div>
             <div class="login-form-password mb-3">
                 <label for="password" class="sr-only">{{#str}} password {{/str}}</label>
-                <input type="password" name="password" id="password" value="" {{!
-                    !}}class="form-control form-control-lg" {{!
-                    !}}placeholder="{{#cleanstr}}password{{/cleanstr}}" {{!
-                    !}}autocomplete="current-password">
+                <input type="password" name="password" id="password" value="" class="form-control form-control-lg" placeholder="Digite sua senha" autocomplete="current-password">
             </div>
             {{#recaptcha}}
                 <div class="login-form-recaptcha mb-3">
@@ -153,10 +157,10 @@
                 </div>
             {{/recaptcha}}
             <div class="login-form-submit mb-3">
-                <button class="btn btn-primary btn-lg" type="submit" id="loginbtn">{{#str}}login{{/str}}</button>
+                <button class="btn btn-primary btn-lg w-100" style="background-color: #6861F2; border: none; color: #fff" type="submit" id="loginbtn">Acessar</button>
             </div>
             <div class="login-form-forgotpassword mb-3">
-                <a href="{{forgotpasswordurl}}">{{#str}}forgotaccount{{/str}}</a>
+                <button type="button" class="btn btn-secondary btn-lg w-100" style="color: #888888; background-color: #EFEFEF; border: none;"  onclick="window.location.href='{{forgotpasswordurl}}'">Esqueceu a senha?</button>
             </div>
         </form>
     {{/showloginform}}
@@ -186,30 +190,9 @@
             <a class="btn btn-secondary" href="{{signupurl}}">{{#str}}startsignup{{/str}}</a>
         </div>
     {{/cansignup}}
-    {{#canloginasguest}}
-        <div class="login-divider"></div>
-        <h2 class="login-heading">{{#str}}someallowguest{{/str}}</h2>
-        <form action="{{loginurl}}" method="post" id="guestlogin">
-            <input type="hidden" name="logintoken" value="{{logintoken}}">
-            <input type="hidden" name="username" value="guest" />
-            <input type="hidden" name="password" value="guest" />
-            <button class="btn btn-secondary" type="submit" id="loginguestbtn">{{#str}}loginguest{{/str}}</button>
-        </form>
-    {{/canloginasguest}}
+
     <div class="login-divider"></div>
-    <div class="d-flex">
-        {{#languagemenu}}
-            <div class="login-languagemenu">
-                {{>core/action_menu}}
-            </div>
-            <div class="divider border-start align-self-center mx-3"></div>
-        {{/languagemenu}}
-        <button type="button" class="btn btn-secondary" {{!
-        }} data-modal="alert"{{!
-        }} data-modal-title-str='["cookiesenabled", "core"]' {{!
-        }} data-modal-content-str='["cookiesenabled_help_html", "core"]'{{!
-        }}>{{#str}}cookiesnotice{{/str}}</button>
-    </div>
+
 </div>
 
 {{#js}}
